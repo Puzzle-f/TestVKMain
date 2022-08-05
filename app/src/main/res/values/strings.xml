@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestVKMain</string>
+    <string name="start">Start</string>
+    <string name="name">name</string>
+    <string name="surname">surname</string>
+    <integer name="com_vk_sdk_AppId">8229286</integer>
+</resources>
