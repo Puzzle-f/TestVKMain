@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testvk.data.Frend
+import com.example.testvk.data.User
 import com.example.testvkmain.R
 import com.example.testvkmain.databinding.ItemBinding
 
@@ -24,6 +25,6 @@ class FollowersAdapter(val list: List<Frend>) :
         holder.itemBinding.itemData = list[position]
     }
 
-    override fun getItemCount() = list.size!!
+    override fun getItemCount() = list.size
 
 }

@@ -2,14 +2,16 @@ package com.example.testvk.repository
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
+import com.google.gson.JsonObject
+import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.IOException
 
 private val url = "https://api.vk.com/method/"
+private val urlUsers = "https://api.github.com/"
 
 val gsonVK = GsonBuilder().setLenient()
     .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
@@ -24,6 +26,8 @@ val retrofitVK = Retrofit.Builder()
     .build()
 
 val apiVK = retrofitVK.create(IDataSource::class.java)
+val apiVK2 = retrofitVK.create(IDataSource2::class.java)
+val apiUsers = retrofitVK.create(IDataSourceUsers::class.java)
 
 private fun createOkHttpClient(interceptor: Interceptor): OkHttpClient {
     val httpClient = OkHttpClient.Builder()
@@ -32,3 +36,5 @@ private fun createOkHttpClient(interceptor: Interceptor): OkHttpClient {
     httpClient.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
     return httpClient.build()
 }
+
+

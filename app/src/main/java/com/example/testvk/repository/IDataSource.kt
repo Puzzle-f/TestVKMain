@@ -1,5 +1,6 @@
 package com.example.testvk.repository
 
+import com.example.testvk.data.Frend
 import com.example.testvk.data.ResponseVK
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
@@ -15,9 +16,7 @@ interface IDataSource {
         @Query("fields") fields: String,
         @Query("access_token") access_token: String,
         @Query("v") v: String
-    )
-//    : Single<List<Frend>>
-            : Single<ResponseVK>
+    ): Single<List<ResponseVK>>
 
 
 }
