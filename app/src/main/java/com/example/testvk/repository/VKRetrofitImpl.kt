@@ -2,13 +2,11 @@ package com.example.testvk.repository
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
-import com.google.gson.JsonObject
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.IOException
 
 private val url = "https://api.vk.com/method/"
 private val urlUsers = "https://api.github.com/"
@@ -26,8 +24,7 @@ val retrofitVK = Retrofit.Builder()
     .build()
 
 val apiVK = retrofitVK.create(IDataSource::class.java)
-val apiVK2 = retrofitVK.create(IDataSource2::class.java)
-val apiUsers = retrofitVK.create(IDataSourceUsers::class.java)
+val apiVK2 = retrofitVK.create(IDataSourceFollewers::class.java)
 
 private fun createOkHttpClient(interceptor: Interceptor): OkHttpClient {
     val httpClient = OkHttpClient.Builder()
